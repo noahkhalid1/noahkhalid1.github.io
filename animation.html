@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<style>
+#container {
+  width: 1400px;
+  height: 200px;
+  position: relative;
+  background: darkblue;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-delay: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternte;
+
+}
+#animate {
+  width: 100px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+}
+</style>
+<body>
+
+<p><button onclick="myMove()">This is Noah, see what happens when you tap here</button></p> 
+
+<div id ="container">
+  <div id ="animate"></div>
+</div>
+
+<script>
+function myMove() {
+  let id = null;
+  const elem = document.getElementById("animate");   
+  let pos = 0;
+  clearInterval(id);
+  id = setInterval(frame, 12);
+  function frame() {
+    if (pos == 150) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + "px"; 
+      elem.style.left = pos + "px"; 
+    }
+  }
+}
+</script>
+
+</body>
+</html>

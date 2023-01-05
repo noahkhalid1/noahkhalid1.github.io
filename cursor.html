@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css">
+		
+		#box{
+			width: 200px;
+			height: 200px;
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-image: url(DEAN.jpeg);
+			position: absolute;
+			transition: 0s;}
+
+
+		body{
+
+			cursor: none;
+	}
+
+</style>
+
+
+</head>
+<body>
+
+	<div id="box"></div>
+	<script type="text/javascript">
+
+
+
+
+		document.addEventListener("mousemove", function (event){
+			console.log(event.clientX, event.clientY);
+			console.log(event.clientX, event.clientY)
+			box.style.left = event.clientX -100 + "px";
+			box.style.top = event.clientY -100 + "px";
+})
+
+
+
+	</script>
+
+</body>
+</html>

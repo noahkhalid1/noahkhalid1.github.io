@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title></title>
+	<style type="text/css">
+		#text{
+			font-size:75px;
+		}
+		p{
+			font-size:50px;
+		}
+
+	</style>
+</head>
+<body>
+	<center>
+		<p> Welcome, choose what breakfast you want on sunday! </p>
+		<div id="text"></div>
+
+</center>
+
+	<script type="text/javascript">
+		
+			var breakfast = ["waffles","eggs","breakfast burrito","pancakes","yogurt with gronola","frenchtoast","chocolate pancakes","bagel with cream cheese","bagel and lox","bacon","omelette"];
+
+			document.addEventListener("click", function(){
+
+				var number = Math.round(Math.random()*11)
+				console.log(number)
+				text.innerText = breakfast [number];
+			})
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

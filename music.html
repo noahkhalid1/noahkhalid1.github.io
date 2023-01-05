@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<!-- 1. add an Event Listener to the document
+
+
+	Sam's switch strategy:
+	2.  create a variable that acts like a switch that stores the value of any binary 
+	3. then based on thqt play or pause the audio
+
+	Sam's odd/even strategy:
+	2. create a counter variable that counts the number of clicks
+	3. if the counter is odd, play the audio
+	4. if the counter is even, pause the audio
+ -->
+
+<script type="text/javascript">
+
+		var counter = 0; 
+
+		document.addEventListener("click",
+
+			function(){
+
+				counter = counter+1
+				console. log(counter)
+
+				if (counter%2 == 1){
+					document.body.style.backgroundImage = "url(young.png)";
+				}
+				
+				if (counter%2 == 0){
+					document.body.style.backgroundImage = "url(zach.png)";
+				}
+
+
+			}
+			)
+	
+
+
+
+
+</script>
+</body>
+</html>
