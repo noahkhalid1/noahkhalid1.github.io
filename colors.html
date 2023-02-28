@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css">
+		body{
+			background-color: rgb(256, 20, 5);
+		}
+	</style>
+
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+		document.addEventListener("mousemove", function(noah){console.log(noah.clientX, noah.clientY);
+
+				document.body.style.backgroundColor = "rgb(153," + noah.clientX + "," + noah.clientY + ")";
+
+			}
+			)
+	</script>
+
+</body>
+</html>

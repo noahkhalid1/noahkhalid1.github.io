@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css">
+		
+		.hearto{
+			width: 150px;
+			height: 150px;
+			background-image: url(pinkheart.jpeg);
+			background-size: contain;
+			background-repeat: no-repeat;
+			display: inline-block;
+			position: absolute;
+			z-index: -1;
+			/*background-color: blue;*/
+		}
+
+		.invisible{
+			z-index: 1;
+			opacity: 0;
+			font-size: 55px;
+			color: white;
+			background-image: url(vday.png);
+			background-size: contain;
+			image-rendering: 50px;
+			background-image-size: 30px;
+			font-family:'Bebas Neue', cursive;
+
+		}
+
+		.invisible:hover{
+			opacity: 1;
+		}
+
+		p{
+			background-color: rgba(0, 0, 0, 0.38);
+		}
+	</style>
+</head>
+<body>
+<div id="message1" class="invisible"><p>Dear Mom, happy Valentines day. </p></div>
+
+<div id="message2" class="invisible"><p>Thank you for everything that you do for me and my brothers.</p></div>
+
+<div id="message3" class="invisible"><p>From waking us up and making breakfast to driving us anywhere for a basketball game,</p></div>
+
+<div id="message4" class="invisible"><p>you do it without hesitation and are always happy.</p></div>
+
+<div id="message5" class="invisible"><p>I love to see you with a smile on your face.</p></div>
+
+<div id="message6" class="invisible"><p>I am sorry for all the times I don't listen to you even though you are almost always right.</p></div>
+
+<div id="message7" class="invisible"><p>I don't think you are appreciated enough for all the hard work you do for so many people.</p></div>
+
+<div id="message8" class="invisible"><p>I know valentines day is one of your favorite holidays so I hope you enjoy it.</p></div>
+
+<div id="message9" class="invisible"><p>Have fun wearing all pink and red all day long!</p></div>
+
+<div id="message10" class="invisible"><p>Love you<3</p></div>
+
+
+	<script type="text/javascript">
+
+		document.addEventListener("mousemove",
+
+			function makeHearts (event){
+			var hearts = document.createElement("div");
+			document.body.appendChild(hearts);
+			hearts.classList.add('hearto');
+			hearts.style.left =event.clientX +"px";
+			hearts.style.top =event.clientY +"px";
+
+		})
+
+		message1.addEventListener('mouseenter', function(){
+			message1.style.opacity = "1";
+		})
+
+		message2.addEventListener('mouseenter', function(){
+			message2.style.opacity = "1";
+		})
+
+		message3.addEventListener('mouseenter', function(){
+			message3.style.opacity = "1";
+		})
+
+		message4.addEventListener('mouseenter', function(){
+			message4.style.opacity = "1";
+		})
+
+		message5.addEventListener('mouseenter', function(){
+			message5.style.opacity = "1";
+		})
+
+		message6.addEventListener('mouseenter', function(){
+			message6.style.opacity = "1";
+		})
+
+		message7.addEventListener('mouseenter', function(){
+			message7.style.opacity = "1";
+		})
+
+		message8.addEventListener('mouseenter', function(){
+			message8.style.opacity = "1";
+		})
+
+		message9.addEventListener('mouseenter', function(){
+			message9.style.opacity = "1";
+		})
+
+		message10.addEventListener('mouseenter', function(){
+			message10.style.opacity = "1";
+		})
+
+		// document.addEventListener("mousemove", function(event){console.log(event.clientX, event.clientY)
+		// 	})
+			
+		
+	</script>
+
+</body>
+</html>
