@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Regenerating Circle</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+  <script>
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+
+    // Set canvas size
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // Define circle properties
+    var x = canvas.width/2;
+    var y = canvas.height/2;
+    var radius = 50;
+    var colors = ['#ff0000', '#ff9900', '#ffff00', '#33cc33', '#0099cc', '#6633cc', '#cc0099'];
+    var colorIndex = 0;
+
+    // Function to draw circle
+    function drawCircle() {
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, 2*Math.PI);
+      ctx.fillStyle = colors[colorIndex];
+      ctx.fill();
+    }
+
+    // Function to regenerate circle
+    function regenerateCircle() {
+      colorIndex++;
+      if (colorIndex >= colors.length) {
+        colorIndex = 0;
+      }
+      radius += 5;
+      if (radius >= 200) {
+        radius = 50;
+      }
+      drawCircle();
+      requestAnimationFrame(regenerateCircle);
+    }
+
+    // Event listener to update circle position on mouse move
+    canvas.addEventListener('mousemove', function(e) {
+      x = e.clientX;
+      y = e.clientY;
+    });
+
+    // Call regenerateCircle function to start animation
+    regenerateCircle();
+  </script>
+</body>
+</html>

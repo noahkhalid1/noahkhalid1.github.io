@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rock Paper Scissors</title>
+	<style>
+		body {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: center;
+		}
+		.choice {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		.choice img {
+			max-width: 200px;
+			max-height: 200px;
+		}
+	</style>
+</head>
+<body>
+	<div class="choice" id="player">
+		<h2>Player</h2>
+		<img id="playerChoice" src="">
+	</div>
+	<div class="choice" id="computer">
+		<h2>Computer</h2>
+		<img id="computerChoice" src="">
+	</div>
+	<div id="result">
+		<h2>Result</h2>
+		<p id="winner"></p>
+	</div>
+	<script>
+		var playerChoice = document.getElementById("playerChoice");
+		var computerChoice = document.getElementById("computerChoice");
+		var winner = document.getElementById("winner");
+
+		// Define images for each choice
+		var choices = [
+			{
+				name: "rock",
+				image: "rock.jpeg"
+			},
+			{
+				name: "paper",
+				image: "paper.jpeg"
+			},
+			{
+				name: "scissors",
+				image: "scissors.jpeg"
+			}
+		];
+
+		// Function to randomly select a choice
+		function randomChoice() {
+			return choices[Math.floor(Math.random() * choices.length)];
+		}
+
+		// Function to determine the winner
+		function determineWinner(playerChoice, computerChoice) {
+			if (playerChoice.name == computerChoice.name) {
+				return "It's a tie!";
+			}
+			else if (playerChoice.name == "rock" && computerChoice.name == "scissors" ||
+				playerChoice.name == "paper" && computerChoice.name == "rock" ||
+				playerChoice.name == "scissors" && computerChoice.name == "paper") {
+				return "Player wins!";
+			}
+			else {
+				return "Computer wins!";
+			}
+		}
+
+		// Event listener to handle player choice
+		document.addEventListener("click", function(event) {
+			if (event.target.tagName == "IMG") {
+				// Generate random choice for computer
+				var computer = randomChoice();
+				computerChoice.src = computer.image;
+				computerChoice.alt = computer.name;
+
+				// Set player choice based on clicked image
+				playerChoice.src = event.target.src;
+				playerChoice.alt = event.target.alt;
+
+				// Determine winner
+				winner.innerText = determineWinner(choices.find(c => c.name == event.target.alt), computer);
+			}
+		});
+	</script>
+</body>
+</html>
