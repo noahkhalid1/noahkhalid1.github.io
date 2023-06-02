@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#box{
+			width: 700px;
+			height: 800px;
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+
+			
+		}
+		#card{
+			height: 85px;
+			width: 300px;
+			color: green;
+			font-size: 50px;
+			text-align: center;
+			margin-right: auto;
+			margin-left: auto;
+			font-family: cursive;
+			background-color: rgba(0, 0, 0, 0.3);
+
+		}
+	</style>
+
+</head>
+<body>
+
+	<div id="card">Click the screen</div>
+<center>
+	<div id="box"></div>
+</center>
+
+
+<script type="text/javascript">
+
+		var counter = 0; 
+
+		document.addEventListener("click",
+
+			function(){
+
+				var randomNumber = Math.round(Math.random()*19)
+		
+			box.style.backgroundImage = "url(./2022/"+ randomNumber + ".png)";
+
+
+				counter = counter+1
+				console. log(counter)
+
+				
+
+
+			})
+	
+
+</script>
+</body>
+</html>
